@@ -48,7 +48,9 @@ class NewStudentContainer extends Component {
       imageUrl: this.state.imageUrl,
       campusId: this.state.campusId
     };
-
+    if (student.imageUrl === null) {
+      student.imageUrl = "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
+    }
     // Add new student in back-end database
     let newStudent = await this.props.addStudent(student);
 
@@ -56,6 +58,9 @@ class NewStudentContainer extends Component {
     this.setState({
       firstname: "",
       lastname: "",
+      gpa: "",
+      email: "",
+      imageUrl: null,
       campusId: null,
       redirect: true,
       redirectId: newStudent.id
