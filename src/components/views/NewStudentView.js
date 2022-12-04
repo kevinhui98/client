@@ -42,6 +42,7 @@ const NewStudentView = (props) => {
   //   alert("Please select a campus ID.");
   //   return false;
   // }
+
   // Render a New Student view with an input form
   return (
     <div>
@@ -70,15 +71,15 @@ const NewStudentView = (props) => {
             <br />
             <br />
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>image url: </label>
-            <input type="text" name="imageUrl" onChange={(e) => handleChange(e)} />
+            <input type="url" name="imageUrl" onChange={(e) => handleChange(e)} />
             <br />
             <br />
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>GPA: </label>
-            <input type="number" name="gpa" onChange={(e) => handleChange(e)} min='0.00' max='4.00' />
+            <input type="number" name="gpa" onChange={(e) => handleChange(e)} min='0.00' max='4.00' step="0.01" />
             <br />
             <br />
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>Campus Id: </label>
-            <input type="number" name="campusId" onChange={(e) => handleChange(e)} />
+            <input type="number" name="campusId" onChange={(e) => handleChange(e)} required />
             <br />
             <br />
 
