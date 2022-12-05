@@ -18,6 +18,11 @@ const StudentView = (props) => {
       <Link to={`/campus/${student.campusId}`}>
         <h3>{student.campus.name}</h3>
       </Link>
+      <br />
+      {/* edit student button */}
+      <Link to={`/editstudent/${student.id}`}>
+        <button>Edit Student</button>
+      </Link>
     </div>
   );
 
