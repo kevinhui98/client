@@ -41,7 +41,7 @@ const EditStudentView = (props) => {
   return (
     <div>
       <h1>Edit Student</h1>
-
+      {console.log(student)}
       <div className={classes.root}>
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
@@ -51,7 +51,7 @@ const EditStudentView = (props) => {
           </div>
           <form style={{ textAlign: 'center' }} onSubmit={(e) => handleSubmit(e)} name="addStudent">
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>First Name: </label>
-            <input type="text" name="firstname" onChange={(e) => handleChange(e)} value={student.firtname} />
+            <input type="text" name="firstname" onChange={(e) => handleChange(e)} placeholder={student.firstname} />
             <br />
             <br />
 
