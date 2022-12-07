@@ -15,17 +15,21 @@ class EditStudentContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: this.props.student.id,
+      firstname: this.props.student.firstname,
+      lastname: this.props.student.lastname,
+      gpa: this.props.student.gpa,
+      email: this.props.student.email,
+      imageUrl: this.props.student.imageUrl,
+      campusId: this.props.student.campusId,
       redirect: false,
       redirectId: null
     };
   }
   // Get student data from back-end database
   componentDidMount() {
-    //getting student ID from url
-    this.props.fetchStudent(this.props.match.params.id);
     this.props.editStudent(this.props.student);
-    console.log("EditStudentContainer: componentDidMount: this.props.match.params.id = ", this.props.match.params);
-    console.log("EditStudentContainer: componentDidMount: this.props.student = ", this.props.student);
+
   }
   // Capture input data when it is entered
   handleChange = event => {
@@ -37,8 +41,9 @@ class EditStudentContainer extends Component {
   // Take action after user click the submit button
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
-
+    console.log("EditStudentContainer: handleSubmit: this.props.student = ", this.props.student);
     let student = {
+      id: this.state.id,
       firstname: this.state.firstname,
       lastname: this.state.lastname,
       gpa: this.state.gpa,
@@ -46,13 +51,12 @@ class EditStudentContainer extends Component {
       imageUrl: this.state.imageUrl,
       campusId: this.state.campusId
     };
-    if (student.imageUrl === null) {
-      student.imageUrl = this.state.imageUrl
-    }
-    // Add new student in back-end database
+    // changing student in back-end database
+    //update student in back-end database
+    console.log("student ", student.id)
     let EditStudent = await this.props.editStudent(student);
-    let editStudent = await this.props.fetchStudent(this.props.match.params.id);
-
+    // let editStudent = await this.props.fetchStudent(this.props.match.params.id);
+    console.log("EditStudentContainer: handleSubmit: this.props.student = ", this.props.student);
     // Update state, and trigger redirect to show the new student
     this.setState({
       firstname: "",
@@ -62,7 +66,7 @@ class EditStudentContainer extends Component {
       imageUrl: null,
       campusId: null,
       redirect: true,
-      redirectId: EditStudent.id
+      redirectId: this.props.match.params.id
     });
   }
 
@@ -72,7 +76,7 @@ class EditStudentContainer extends Component {
   }
   // Render Student view by passing student data as props to the corresponding View component
   render() {
-    // Redirect to new student's page after submit
+    // Redirect to edited student's page after submit
     if (this.state.redirect) {
       return (<Redirect to={`/student/${this.state.redirectId}`} />)
     }
