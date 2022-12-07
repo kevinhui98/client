@@ -51,29 +51,29 @@ const EditStudentView = (props) => {
           </div>
           <form style={{ textAlign: 'center' }} onSubmit={(e) => handleSubmit(e)} name="addStudent">
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>First Name: </label>
-            <input type="text" name="firstname" onChange={(e) => handleChange(e)} value={student.firtname} />
+            <input type="text" name="firstname" onChange={(e) => handleChange(e)} placeholder={student.firstname} />
             <br />
             <br />
 
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>Last Name: </label>
-            <input type="text" name="lastname" onChange={(e) => handleChange(e)} value={student.lastname} />
+            <input type="text" name="lastname" onChange={(e) => handleChange(e)} placeholder={student.lastname} />
             <br />
             <br />
 
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>Email: </label>
-            <input type="text" name="email" onChange={(e) => handleChange(e)} value={student.email} />
+            <input type="text" name="email" onChange={(e) => handleChange(e)} placeholder={student.email} />
             <br />
             <br />
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>image url: </label>
-            <input type="text" name="imageUrl" onChange={(e) => handleChange(e)} value={student.imageUrl} />
+            <input type="text" name="imageUrl" onChange={(e) => handleChange(e)} placeholder={student.imageUrl} />
             <br />
             <br />
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>GPA: </label>
-            <input type="number" name="gpa" onChange={(e) => handleChange(e)} min='0.00' max='4.00' value={student.gpa} />
+            <input type="number" name="gpa" onChange={(e) => handleChange(e)} min='0.00' max='4.00' step="0.01" placeholder={student.gpa} />
             <br />
             <br />
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>Campus Id: </label>
-            <input type="number" name="campusId" onChange={(e) => handleChange(e)} value={student.campusId} />
+            <input type="number" name="campusId" onChange={(e) => handleChange(e)} placeholder={student.campusId} />
             <br />
             <br />
 
