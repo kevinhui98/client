@@ -34,52 +34,46 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const NewStudentView = (props) => {
-  const { handleChange, handleSubmit } = props;
+const EditStudentView = (props) => {
+  const { student, handleChange, handleSubmit } = props;
   const classes = useStyles();
-  // let campus = document.addStudent.campusId.value;
-  // if (campus === '') {
-  //   alert("Please select a campus ID.");
-  //   return false;
-  // }
-
   // Render a New Student view with an input form
   return (
     <div>
-      <h1>New Student</h1>
+      <h1>Edit Student</h1>
 
       <div className={classes.root}>
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
             <Typography style={{ fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e' }}>
-              Add a Student
+              Edit a Student
             </Typography>
           </div>
           <form style={{ textAlign: 'center' }} onSubmit={(e) => handleSubmit(e)} name="addStudent">
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>First Name: </label>
-            <input type="text" name="firstname" onChange={(e) => handleChange(e)} />
+            <input type="text" name="firstname" onChange={(e) => handleChange(e)} placeholder={student.firstname} />
             <br />
             <br />
 
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>Last Name: </label>
-            <input type="text" name="lastname" onChange={(e) => handleChange(e)} />
+            <input type="text" name="lastname" onChange={(e) => handleChange(e)} placeholder={student.lastname} />
             <br />
             <br />
 
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>Email: </label>
-            <input type="text" name="email" onChange={(e) => handleChange(e)} />
+            <input type="text" name="email" onChange={(e) => handleChange(e)} placeholder={student.email} />
             <br />
             <br />
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>image url: </label>
-            <input type="url" name="imageUrl" onChange={(e) => handleChange(e)} />
+            <input type="text" name="imageUrl" onChange={(e) => handleChange(e)} placeholder={student.imageUrl} />
             <br />
             <br />
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>GPA: </label>
-            <input type="number" name="gpa" onChange={(e) => handleChange(e)} min='0.00' max='4.00' step="0.01" />
+            <input type="number" name="gpa" onChange={(e) => handleChange(e)} min='0.00' max='4.00' step="0.01" placeholder={student.gpa} />
             <br />
             <br />
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>Campus Id: </label>
-            <input type="number" name="campusId" onChange={(e) => handleChange(e)} required />
+            <input type="number" name="campusId" onChange={(e) => handleChange(e)} placeholder={student.campusId} />
             <br />
             <br />
 
@@ -95,4 +89,4 @@ const NewStudentView = (props) => {
   )
 }
 
-export default NewStudentView;
+export default EditStudentView;

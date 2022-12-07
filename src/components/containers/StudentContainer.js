@@ -16,6 +16,7 @@ class StudentContainer extends Component {
   componentDidMount() {
     //getting student ID from url
     this.props.fetchStudent(this.props.match.params.id);
+    // this.props.editStudent(this.props.student);
   }
 
   // Render Student view by passing student data as props to the corresponding View component
@@ -40,7 +41,7 @@ const mapState = (state) => {
 // The "mapDispatch" calls the specific Thunk to dispatch its action. The "dispatch" is a function of Redux Store.
 const mapDispatch = (dispatch) => {
   return {
-    fetchStudent: (id) => dispatch(fetchStudentThunk(id)),
+    fetchStudent: (id) => dispatch(fetchStudentThunk(id))
   };
 };
 

@@ -13,10 +13,12 @@ const initialState = {
 };
 
 // REDUCER:
-const student = (state=initialState, action) => {  // Use "initialState" as default Initial State
+const student = (state = initialState, action) => {  // Use "initialState" as default Initial State
   switch (action.type) {
     case FETCH_STUDENT:
       return action.payload;
+
+
     default:
       // If the Reducer doesn't recognize the Action Type, returns the previous (current) State unchanged.
       return state;
