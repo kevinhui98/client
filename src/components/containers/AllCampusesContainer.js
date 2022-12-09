@@ -39,7 +39,7 @@ const mapState = (state) => {
   return {
     allCampuses: state.allCampuses,  // Get the State object from Reducer "allCampuses"
   };
-};  
+};
 // 2. The "mapDispatch" argument is used to dispatch Action (Redux Thunk) to Redux Store.
 // The "mapDispatch" calls the specific Thunk to dispatch its action. The "dispatch" is a function of Redux Store.
 const mapDispatch = (dispatch) => {
