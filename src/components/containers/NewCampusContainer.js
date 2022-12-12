@@ -21,7 +21,7 @@ class NewCampusContainer extends Component {
             name: "",
             address: "",
             imageUrl: null,
-            discription: null,
+            description: null,
             redirect: false,
             redirectId: null
         };
@@ -42,7 +42,7 @@ class NewCampusContainer extends Component {
             name: this.state.name,
             address: this.state.address,
             imageUrl: this.state.imageUrl,
-            discription: this.state.discription
+            description: this.state.description
         };
         if (campus.imageUrl === null) {
             campus.imageUrl = "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
@@ -55,7 +55,7 @@ class NewCampusContainer extends Component {
             name: "",
             address: "",
             imageUrl: null,
-            discription: null,
+            discrdescriptioniption: null,
             redirect: true,
             redirectId: newCampus.id
         });
