@@ -15,9 +15,13 @@ const StudentView = (props) => {
       <h1>Name: {student.firstname + " " + student.lastname}</h1>
       <h3>Email: {student.email}</h3>
       <h3>GPA: {student.gpa}</h3>
-      <Link to={`/campus/${student.campusId}`}>
-        <h3>{student.campus.name}</h3>
-      </Link>
+      {student.campus == null ?
+        <></>
+        :
+        <Link to={`/campus/${student.campusId}`}>
+          <h3>{student.campus.name}</h3>
+        </Link>
+      }
       <br />
       {/* edit student button */}
       <Link to={`/editstudent/${student.id}`}>
