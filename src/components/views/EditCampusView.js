@@ -34,19 +34,13 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const NewCampusView = (props) => {
-  const { handleChange, handleSubmit } = props;
+const EditCampusView = (props) => {
+  const { campus, handleChange, handleSubmit } = props;
   const classes = useStyles();
-  // let campus = document.addStudent.campusId.value;
-  // if (campus === '') {
-  //   alert("Please select a campus ID.");
-  //   return false;
-  // }
-
   // Render a New Student view with an input form
   return (
     <div>
-      <h1>New Campus</h1>
+      <h1>Edit Campus</h1>
 
       <div className={classes.root}>
         <div className={classes.formContainer}>
@@ -57,20 +51,20 @@ const NewCampusView = (props) => {
           </div>
           <form style={{ textAlign: 'center' }} onSubmit={(e) => handleSubmit(e)} name="addCampus">
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>Name: </label>
-            <input type="text" name="name" onChange={(e) => handleChange(e)} />
+            <input type="text" name="name" onChange={(e) => handleChange(e)} placeholder={campus.name} />
             <br />
             <br />
 
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>Address: </label>
-            <input type="text" name="address" onChange={(e) => handleChange(e)} />
+            <input type="text" name="address" onChange={(e) => handleChange(e)} placeholder={campus.address} />
             <br />
             <br />
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>image url: </label>
-            <input type="url" name="imageUrl" onChange={(e) => handleChange(e)} />
+            <input type="url" name="imageUrl" onChange={(e) => handleChange(e)} placeholder={campus.imageUrl} />
             <br />
             <br />
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>Discription: </label>
-            <textarea name="description" onChange={(e) => handleChange(e)} />
+            <textarea name="description" onChange={(e) => handleChange(e)} placeholder={campus.description} />
             <br />
             <br />
 
@@ -86,4 +80,4 @@ const NewCampusView = (props) => {
   )
 }
 
-export default NewCampusView;
+export default EditCampusView;

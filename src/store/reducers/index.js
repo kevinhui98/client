@@ -14,3 +14,4 @@ export { default as campus } from './campus';
 export { default as allStudents } from './students';
 export { default as student } from './student';
 export { default as editStudent } from './editStudent';
+export { default as editCampus } from './editCampus';
